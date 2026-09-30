@@ -2,8 +2,8 @@
   "version": "2.0",
   "pipeline_stage": "validated",
   "title": "Epilepsy-iEEG-Multicenter-Dataset",
-  "description": "A multicenter retrospective study of intracranial EEG (iEEG) data from 100 subjects across 5 epilepsy centers, with 4 centers' data publicly available. The dataset includes electrocorticography (ECoG) and stereotactic EEG (SEEG) recordings organized around seizure events, with clinical annotations of seizure onset zones and surgical resection sites. This resource supports research on neural fragility as an electrophysiological marker for identifying seizure onset zones in epilepsy patients.",
-  "methods_description": "iEEG data were acquired as ECoG and SEEG recordings from epilepsy patients undergoing clinical monitoring. Raw EDF files were converted to BrainVision format using mne_bids. For SEEG implantations, electrode anatomical locations were manually marked by clinicians and categorized as white matter, gray matter, ventricle, cerebrospinal fluid, or outside brain. Seizure events were annotated by clinicians with electrographic and clinical onset/offset markers, and surgical resection zones were determined from postoperative MRI or manual visual inspection of CT/MRI coregistrations.",
+  "description": "A multicenter collection of intracranial EEG (ECoG and SEEG) recordings from epilepsy patients at four clinical centers (NIH, JHH, UMMC, UMF), organized in BIDS. Recordings are snapshots around seizure events and include clinician annotations of seizure onset and offset, seizure onset zone, and resected or ablated contacts. The data support research on localizing the epileptogenic zone, including neural fragility analysis.",
+  "methods_description": "Raw EDF files were converted to BrainVision format with MNE-BIDS. Clinicians marked electrodes anatomically for SEEG patients, and channels in white matter, ventricle, CSF or outside the brain were labeled as bad. Seizure onset and offset markers came from EDF annotations or clinician spreadsheets. Resected or ablated contacts were identified from surgical notes or by comparing postoperative MRI with CT scans.",
   "license": "CC0",
   "dataset_type": "raw",
   "authors": {
@@ -34,34 +34,28 @@
       "term": "intracranial EEG"
     },
     {
-      "term": "electrocorticography"
-    },
-    {
-      "term": "stereotactic EEG"
-    },
-    {
-      "term": "seizure onset zone"
-    },
-    {
       "term": "Epilepsy",
       "subject_scheme": "MeSH",
       "value_uri": "http://id.nlm.nih.gov/mesh/D004827"
     },
     {
-      "term": "neural fragility"
+      "term": "stereoelectroencephalography"
     },
     {
-      "term": "epilepsy surgery"
+      "term": "Electrocorticography",
+      "subject_scheme": "MeSH",
+      "value_uri": "http://id.nlm.nih.gov/mesh/D000069280"
+    },
+    {
+      "term": "seizure onset zone"
+    },
+    {
+      "term": "neural fragility"
     }
   ],
   "related_identifiers": [
     {
       "identifier": "https://github.com/nemarDatasets/on003029",
-      "identifier_type": "URL",
-      "relation_type": "IsDescribedBy"
-    },
-    {
-      "identifier": "https://nemar.org/dataexplorer/detail?dataset_id=on003029",
       "identifier_type": "URL",
       "relation_type": "IsDescribedBy"
     },
@@ -84,6 +78,16 @@
       "identifier": "10.18112/openneuro.ds003029.v1.0.5",
       "identifier_type": "DOI",
       "relation_type": "IsDerivedFrom"
+    },
+    {
+      "identifier": "https://nemar.org/dataset/on003029",
+      "identifier_type": "URL",
+      "relation_type": "IsDescribedBy"
+    },
+    {
+      "identifier": "10.1038/s41597-019-0104-8",
+      "identifier_type": "DOI",
+      "relation_type": "References"
     }
   ],
   "funding_references": [
@@ -103,15 +107,13 @@
       "funder_name": "Maryland Innovation Initiative"
     },
     {
-      "funder_name": "Burroughs Well CASI Award 1007274"
-    },
-    {
       "funder_name": "NIH",
       "award_number": "T32 EB003383"
     },
     {
       "funder_name": "NSF",
-      "award_number": "DGE-1746891"
+      "award_number": "DGE-1746891",
+      "award_title": "Graduate Research Fellowship Program"
     },
     {
       "funder_name": "NIH",
@@ -119,7 +121,13 @@
     },
     {
       "funder_name": "NSF",
-      "award_number": "1055560"
+      "award_number": "1055560",
+      "award_title": "Career Award"
+    },
+    {
+      "funder_name": "Burroughs Wellcome Fund",
+      "award_number": "1007274",
+      "award_title": "CASI Award"
     }
   ],
   "resource_type_general": "Dataset",
@@ -128,7 +136,7 @@
     "ieeg"
   ],
   "sizes": [
-    "10.8 GB (317 files)"
+    "10.10 GB (317 files)"
   ],
   "formats": [
     ".eeg",
